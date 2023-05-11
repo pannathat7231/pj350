@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tourd Table</title>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th, td {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tourd Table</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Tour Name</th>
+          <th>Host Name</th>
+          <th>Prize Pool</th>
+          <th>File Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% results.forEach(function(row) { %>
+          <tr>
+            <td><%= row.id %></td>
+            <td><%= row.tourname %></td>
+            <td><%= row.hostname %></td>
+            <td><%= row.prizepool %></td>
+            <td><%= row.file_name %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<!-- user.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Data</title>
+</head>
+<body>
+  <h1>User Data</h1>
+  <ul>
+    <% results.forEach(function(user) { %>
+      <li>ID: <%= user.id %>, Name: <%= user.name %></li>
+      <!-- Add more list items or customize the display format as needed -->
+    <% }); %>
+  </ul>
+</body>
+</html>
