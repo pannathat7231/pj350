@@ -117,10 +117,7 @@ app.post('/login', function (req, res, next) {
       'SELECT * FROM user WHERE username = ? AND password = ?',
       [username, password],
       function(err, results) {
-        function (err, results) {
             res.json(results);
-        }
-
     })
 })
 
