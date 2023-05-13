@@ -101,7 +101,7 @@ app.put('/updatetourd', function (req, res, next) {
 app.delete('/deletetourd', function (req, res, next) {
     connection.query(
         'DELETE FROM tourd WHERE id = ?',
-        [req.body.id,req.body.tourname, req.body.hostname, req.body.prizepool, req.body.contract],
+        [req.body.id],
         function (err, results) {
             res.json(results);
         }
