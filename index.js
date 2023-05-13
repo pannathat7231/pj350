@@ -50,7 +50,7 @@ app.put('/updateuser', function (req, res, next) {
 
 app.delete('/deleteuser', function (req, res, next) {
     connection.query(
-        'DELETE FROM users WHERE uid = ?',
+        'DELETE FROM user WHERE uid = ?',
         [req.body.uid],
         function (err, results) {
             res.json(results);
