@@ -38,10 +38,10 @@ app.post('/adduser', function (req, res, next) {
     );
 })
 
-app.put('/user', function (req, res, next) {
+app.put('/updateuser', function (req, res, next) {
     connection.query(
-        'UPDATE `user` SET `username`= ?, `password`= ?, `email`= ? WHERE uid = ?',
-        [req.body.username, req.body.password, req.body.email, req.body.uid],
+        'UPDATE `user` SET `username`= ?, `password`= ?, `email`= ?, `avatar` = ? WHERE uid = ?',
+        [req.body.username, req.body.password, req.body.email, req.body.avatar, req.body.uid],
         function (err, results) {
             res.json(results);
         }
