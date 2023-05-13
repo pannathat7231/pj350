@@ -18,10 +18,10 @@ app.get('/user', function (req, res, next) {
 })
 
 app.get('/user/:id', function (req, res, next) {
-    const uid = req.params.uid;
+    const id = req.params.uid;
     connection.query(
         'SELECT * FROM user WHERE uid = ?',
-        [uid],
+        [id],
         function (err, results) {
             res.json(results);
         }
