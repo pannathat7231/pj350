@@ -30,7 +30,7 @@ app.get('/user/:id', function (req, res, next) {
 
 app.post('/adduser', function (req, res, next) {
     connection.query(
-        'INSERT INTO `user`( `username`, `password`,`email`, `avatar`) VALUES (?, ?, ?)',
+        'INSERT INTO `user`( `username`, `password`,`email`, `avatar`) VALUES (?, ?, ?, ?)',
         [req.body.username, req.body.password, req.body.email, req.body.avatar],
         function (err, results) {
             res.json(results);
