@@ -57,8 +57,6 @@ app.delete('/user', function (req, res, next) {
         }
     );
 })
-////////////////////////////////////////////////////////////////////////////////////////////
-//orders
 
 app.get('/tourd', function (req, res, next) {
     connection.query(
@@ -120,14 +118,14 @@ app.post('/login', function (req, res, next) {
       [username, password],
       function(err, results) {
         if (err) {
-          res.send({ err : err})
+          res.json({ err : err})
         }
   
         if (results.length > 0) {
-        res.send({ results})
+        res.json({ results})
           
         }else{
-        res.send({ message: "Wrong username or password"})
+        res.json({ message: "Wrong username or password"})
         }
 
     })
