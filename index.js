@@ -78,7 +78,7 @@ app.get('/tourd/:id', function (req, res, next) {
     );
 })
 
-app.post('/tourd', function (req, res, next) {
+app.post('/addtourd', function (req, res, next) {
     connection.query(
         'INSERT INTO `tourd`(`tourname`,`hostname`,`prizepool`,`contract`) VALUES (?,?,?,?)',
         [req.body.tourname, req.body.hostname, req.body.prizepool, req.body.contract],
@@ -88,17 +88,17 @@ app.post('/tourd', function (req, res, next) {
     );
 })
 
-app.put('/tourd', function (req, res, next) {
+app.put('/updatetourd', function (req, res, next) {
     connection.query(
         'UPDATE tourd SET `tourname`= ?,`hostname`= ?,`prizepool`= ? ,`contract`= ? WHERE id = ?',
-        [req.body.tourname, req.body.hostname, req.body.prizepool, req.body.contract,req.body.order_ID],
+        [req.body.tourname, req.body.hostname, req.body.prizepool, req.body.contract,req.body.id],
         function (err, results) {
             res.json(results);
         }
     );
 })
 
-app.delete('/tourd', function (req, res, next) {
+app.delete('/deletetourd', function (req, res, next) {
     connection.query(
         'DELETE FROM tourd WHERE id = ?',
         [req.body.id],
