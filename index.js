@@ -51,7 +51,7 @@ app.put('/updateuser', function (req, res, next) {
 app.delete('/deleteuser', function (req, res, next) {
     connection.query(
         'DELETE FROM users WHERE uid = ?',
-        [req.body.uid,req.body.username, req.body.password, req.body.email, req.body.avatar],
+        [req.body.uid],
         function (err, results) {
             res.json(results);
         }
@@ -68,7 +68,7 @@ app.get('/tourd', function (req, res, next) {
 })
 
 app.get('/tourd/:id', function (req, res, next) {
-    const id = req.params.order_ID;
+    const id = req.params.id;
     connection.query(
         'SELECT * FROM tourd WHERE id = ?',
         [id],
