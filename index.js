@@ -117,15 +117,8 @@ app.post('/login', function (req, res, next) {
       'SELECT * FROM user WHERE username = ? AND password = ?',
       [username, password],
       function(err, results) {
-        if (err) {
-          res.json({ err : err})
-        }
-  
-        if (results.length > 0) {
-        res.json({ results})
-          
-        }else{
-        res.json({ message: "Wrong username or password"})
+        function (err, results) {
+            res.json(results);
         }
 
     })
